@@ -1,0 +1,58 @@
+{
+  "name": "tos-tracker",
+  "version": "1.0.0",
+  "description": "TOS Tracker — web app for tracking architectural projects",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev:desktop": "electron-vite dev",
+    "build:desktop": "electron-vite build",
+    "preview:desktop": "electron-vite preview",
+    "pack": "npm run build:desktop && electron-builder --dir",
+    "dist": "npm run build:desktop && electron-builder"
+  },
+  "keywords": [],
+  "author": "Tesla Outsourcing Services",
+  "license": "ISC",
+  "build": {
+    "appId": "com.teslaoutsourcing.tostracker",
+    "productName": "TOS Tracker",
+    "directories": {
+      "buildResources": "resources"
+    },
+    "files": [
+      "out/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/ws": "^8.18.1",
+    "@vitejs/plugin-react": "5.1.0",
+    "electron": "^43.0.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "typescript": "^5.7.3",
+    "vite": "^7.1.7"
+  },
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.2",
+    "@electron-toolkit/tsconfig": "^2.0.0",
+    "@electron-toolkit/utils": "^4.0.0",
+    "@types/nodemailer": "^8.0.1",
+    "exceljs": "^3.4.0",
+    "nodemailer": "^9.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "ws": "^8.21.0"
+  }
+}
